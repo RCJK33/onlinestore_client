@@ -1,0 +1,23 @@
+.product{
+    display: inline-flex;
+    flex-direction: column;
+
+    width: 240px;
+    height: 320px;
+    border: 1px solid #666;
+    border-radius: 10px;
+
+    margin: 5px;
+
+    overflow: hidden;
+}
+
+.product img{
+    height: 90%;
+    object-fit: cover;
+}
+
+.product h5{
+    margin: auto 20px;
+    text-align: left;
+}

@@ -1,0 +1,10 @@
+.footer{
+    border-top: 1px solid gray;
+    background-color: gainsboro;
+    padding: 10px 0;
+}
+
+.footer h5{
+    text-align: center;
+    color: #999;
+}
