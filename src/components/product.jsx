@@ -1,10 +1,25 @@
+import QuantityPicker from "./quantityPicker";
 import "./cssStyles/product.css"
 
-function Product() {
+function Product(product) {
+
+    const handleAdd = () => {
+        console.log("Added to cart");
+    }
+
     return (
-        <div className="product">
-            <img src="https://picsum.photos/id/237/200/300" alt="" srcset="" />
-            <h5>Product Title here</h5>
+        <div className="product f-column">
+            <img src={"/images/"+product.data.img} alt="" srcset="" />
+            <div className="product-element">
+                <h5>{product.data.name}</h5>
+                <label>${product.data.price.toFixed(2)}</label>
+            </div>
+            <div className="f-column">
+                <QuantityPicker/>
+                <button className="btn btn-success btn-sm" onClick={handleAdd}>
+                    <i className="fa-solid fa-cart-plus"></i>
+                </button>
+            </div>
         </div>
     );
 }

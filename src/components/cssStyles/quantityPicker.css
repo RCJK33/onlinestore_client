@@ -1,0 +1,18 @@
+.qt-picker{
+    display: flex;
+}
+.qt-picker label{
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+.qt-picker button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 31px;
+    margin: 8px
+}

@@ -1,4 +1,7 @@
 .catalog{
-    background-color: #fafafa;
+    background-color: #e7e7e7;
+    padding: 40px;
     margin: 30px 20px;
+
+    border-radius: 10px;
 }
