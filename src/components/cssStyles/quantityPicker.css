@@ -16,3 +16,10 @@
     height: 31px;
     margin: 8px
 }
+
+@media (max-width: 480px) {
+    .qt-picker button{
+        width: 80px;
+        height: 41px;
+    }
+}

@@ -17,6 +17,10 @@
     overflow: hidden;
 }
 
+.product .btn-success{
+    border-radius: 0px;
+}
+
 .product-element{
     display: flex;
     justify-content: space-between;
@@ -36,4 +40,14 @@
 .product h5{
     margin: 0;
     text-align: left;
+}
+
+@media (max-width: 480px) {
+    .product{
+        width: auto;
+        height: 400px;
+    }
+    .product .btn-success{
+        padding: 10px;
+    }
 }

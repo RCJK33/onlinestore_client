@@ -4,7 +4,7 @@ let catalog = [
         name:"Egg",
         price: 10.5,
         img: "egg.jpg",
-        category: "Fruit"
+        category: "Dairy & egg"
     },
     {
         _id:2,
@@ -18,7 +18,7 @@ let catalog = [
         name:"Carrot",
         price: 27.0,
         img: "carrot.jpg",
-        category: "Fruit"
+        category: "Vegetable"
     },
     {
         _id:4,
@@ -32,7 +32,7 @@ let catalog = [
         name:"Green Bell Poper",
         price: 20.1,
         img: "green_bell_poper.jpg",
-        category: "Fruit"
+        category: "Vegetable"
     },
     {
         _id:6,
@@ -46,7 +46,7 @@ let catalog = [
         name:"Mushroom",
         price: 27.0,
         img: "mushroom.jpg",
-        category: "Vegetable"
+        category: "Dairy & egg"
     },
     {
         _id:8,
@@ -81,7 +81,6 @@ let catalog = [
 class DataService{
     getProducts() {
         return catalog;
-
         // TODO: Get catalog from server
     }
 }
