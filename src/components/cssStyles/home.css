@@ -1,0 +1,15 @@
+.home{
+    min-height: 400px;
+    padding-top: 2rem;
+}
+
+.home h1{
+    text-align: center;
+    color: darkgray;
+    margin-bottom: 0;
+}
+
+.home h2{
+    text-align: center;
+    color: gray;
+}

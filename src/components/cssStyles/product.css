@@ -1,6 +1,12 @@
 .f-column{
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+}
+.f-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
 }
 
 .product{
@@ -40,6 +46,19 @@
 .product h5{
     margin: 0;
     text-align: left;
+}
+
+label{
+    font-weight: bold;
+}
+
+label.lbl-total{
+    color: orange;
+}
+
+label span{
+    color: black;
+    font-weight: normal;
 }
 
 @media (max-width: 480px) {

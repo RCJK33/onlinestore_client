@@ -1,0 +1,11 @@
+.cart{
+    background-color: #e7e7e7;
+    padding: 30px 50px;
+    margin: 10px 20px;
+    margin-bottom: 20px;
+
+    border-radius: 10px;
+
+    caret-color: transparent;
+}
+
