@@ -1,0 +1,94 @@
+.admin {
+    display: flex;
+    flex-direction: column;
+    background-color: #e7e7e7;
+    border-radius: 10px;
+    margin: 30px;
+    padding: 10px;
+}
+
+.admin h1 {
+    text-align: left;
+    color: #8a8a8a;
+}
+
+.admin h3 {
+    text-align: left;
+    color: #8a8a8a;
+}
+
+.admin .sections {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+
+.admin section {
+    margin: 10px;
+    padding: 20px;
+
+    background-color: white;
+    border-radius: 10px;
+    border: solid 1px gray;
+}
+
+.admin section .form {
+    display: flex;
+    flex-direction: column;
+}
+.admin .form div{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.admin ul.product-list {
+    list-style: none;
+    margin: 10px 0;
+    padding: 0;
+}
+
+.admin ul.product-list li {
+    display: flex;
+
+
+    margin: 5px 0;
+    padding: 5px;
+
+    border: solid 1px gray;
+    border-radius: 5px;
+
+    align-items: center;
+}
+
+.admin ul.product-list li span {
+    display: flex;
+    text-align: left;
+}
+
+.admin ul.product-list li .title {
+    flex: 4;
+    margin-left: 10px;
+}
+
+.admin ul.product-list li .price {
+    flex: 1;
+}
+
+.admin ul.product-list li button {
+    width: auto;
+    margin-left: 10px;
+}
+
+.admin ul.product-list li:hover {
+    border: solid 1px rgb(173, 119, 119);
+}
+
+.admin .sections .Admin-Products {
+    flex: 3;
+}
+
+.admin .sections .Admin-Coupons {
+    flex: 1;
+}

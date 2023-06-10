@@ -20,6 +20,9 @@ function Navbar() {
                         <li className="nav-item">
                             <Link className="nav-link active" aria-current="page" to='/about'>About</Link>
                         </li>
+                        <li className="nav-item">
+                            <Link className="nav-link active" aria-current="page" to='/admin'>Admin</Link>
+                        </li>
                     </ul>
                     <form className="d-flex" role="search">
                         <Link className='btn btn-outline-primary' to='/cart'>Cart</Link>

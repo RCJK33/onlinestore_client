@@ -14,6 +14,7 @@ import { BrowserRouter, Router, Route } from 'react-router-dom';
 import { Routes } from 'react-router-dom';
 import About from './components/about';
 import Cart from './components/cart';
+import Admin from './components/admin';
 
 function App() {
   return (
@@ -28,6 +29,8 @@ function App() {
             <Route path='/catalog' element={<Catalog />} />
             <Route path='/about' element={<About />} />
             <Route path='/cart' element={<Cart />} />
+            
+            <Route path='/admin' element={<Admin />} />
           </Routes>
         </main>
         <Footer />
