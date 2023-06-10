@@ -3,7 +3,22 @@
     text-align: center;
 }
 
-/* .navbar h3{
-    color:rgb(87, 87, 87);
-    text-align: center;
-} */
+.navbar .lbl-user {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0 10px;
+    padding: 0 10px;
+
+    color: #198754;
+    border: solid 1px #198754;
+    border-radius: 5px;
+}
+
+.navbar .lbl-user .i-user {
+    margin-right: 3px;
+}
+
+.navbar .i-cart {
+    margin-right: 3px;
+}

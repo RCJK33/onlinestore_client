@@ -15,27 +15,29 @@ import { Routes } from 'react-router-dom';
 import About from './components/about';
 import Cart from './components/cart';
 import Admin from './components/admin';
+import GlobalState from './store/globalState';
 
 function App() {
   return (
-    <BrowserRouter>
-      <div className="App">
-        <Navbar />
-        <main>
-          <Routes>
-            <Route path='/' element={<Home />} />
-            <Route path='/home' element={<Home />} />
-            
-            <Route path='/catalog' element={<Catalog />} />
-            <Route path='/about' element={<About />} />
-            <Route path='/cart' element={<Cart />} />
-            
-            <Route path='/admin' element={<Admin />} />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
-    </BrowserRouter>
+    <GlobalState>
+      <BrowserRouter>
+        <div className="App">
+          <Navbar />
+          <main>
+            <Routes>
+              <Route path='/' element={<Home />} />
+              <Route path='/home' element={<Home />} />
+              <Route path='/catalog' element={<Catalog />} />
+              <Route path='/about' element={<About />} />
+              <Route path='/cart' element={<Cart />} />
+
+              <Route path='/admin' element={<Admin />} />
+            </Routes>
+          </main>
+          <Footer />
+        </div>
+      </BrowserRouter>
+    </GlobalState>
   );
 }
 

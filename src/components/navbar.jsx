@@ -1,7 +1,16 @@
+import { useContext, useEffect } from "react";
 import "./cssStyles/navbar.css"
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import StoreContext from "../store/storeContext";
+
 
 function Navbar() {
+    let { cart, user } = useContext(StoreContext);
+
+    const getCartCount = () => {
+        return cart.length;
+    };
+
     return (
         <nav className="navbar navbar-expand-lg bg-secondary-subtle">
             <div className="container-fluid">
@@ -25,7 +34,16 @@ function Navbar() {
                         </li>
                     </ul>
                     <form className="d-flex" role="search">
-                        <Link className='btn btn-outline-primary' to='/cart'>Cart</Link>
+                        <Link className='btn btn-outline-success position-relative' to='/cart'>
+                            <i class="i-cart fa-solid fa-cart-shopping"></i>
+                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill text-bg-warning" hidden={getCartCount() == 0}>
+                                {getCartCount()}
+                            </span>
+                        </Link>
+                        <label className="lbl-user">
+                            <i class="i-user fa-solid fa-circle-user"></i>
+                            {user.name}
+                        </label>
                     </form>
                 </div>
             </div>
