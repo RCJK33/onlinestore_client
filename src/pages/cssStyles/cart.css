@@ -1,0 +1,56 @@
+.f-row {
+    flex-direction: row;
+    align-items: center;
+}
+.cart{
+    background-color: #e7e7e7;
+    padding: 30px 50px;
+    margin: 10px 20px;
+    margin-bottom: 20px;
+
+    border-radius: 10px;
+
+    caret-color: transparent;
+}
+
+.cart .sections {
+    display: flex;
+    flex-direction: row;
+}
+
+.cart .sections section {
+    margin: 10px;
+}
+
+.cart .sections .cart-list {
+    flex: 4;
+}
+
+.cart .sections .payment {
+    flex: 1;
+    padding: 10px;
+
+    background-color: white;
+    border: solid 1px gray;
+    border-radius: 5px;
+}
+
+.cart .sections .payment .coupons input {
+    margin-right: 10px;
+}
+
+.cart .payment .total {
+    margin-bottom: 10px;
+    justify-content: flex-start;
+}
+
+.cart .payment .total p {
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+}
+
+.cart .payment .total h4 {
+    margin: 0 20px 0 0;
+    padding: 0;
+}

@@ -12,6 +12,7 @@ const StoreContext = createContext({
     user: {},
     addToCart: () => {},
     removeFromCart: () => {},
+    getCartCount: () => {}
 
 });
 

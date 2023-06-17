@@ -1,21 +1,40 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './cssStyles/admin.css';
+import DataService from '../Services/DataService';
 
 function Admin(params) {
 
     const [product, setProduct] = useState({});
     const [coupon, setCoupon] = useState({});
-    const [allProducts, setProducts] = useState([]);
-    const [allCoupons, setCoupons] = useState([]);
+    const [allProducts, setAllProducts] = useState([]);
+    const [allCoupons, setAllCoupons] = useState([]);
+
+    useEffect(() => {
+        loadProducts();
+        loadCoupons();
+    }, []);
+
+    async function loadProducts() {
+        let service = new DataService();
+        let prods = await service.getProducts();
+        setAllProducts(prods);
+    }
+    
+    async function loadCoupons() {
+        let service = new DataService();
+        let coupons = await service.getCoupons();
+        setAllCoupons(coupons);
+    }
 
     const handleTextChange = (e) => {
         let text = e.target.value;
         const name = e.target.name;
 
+        console.log(name)
         console.log(text);
 
-        if (text === 'price') {
-            text = parseFloat(text);
+        if (name === 'price') {
+            text = parseFloat(text)
         }
 
         let copy = { ...product };
@@ -23,18 +42,21 @@ function Admin(params) {
         setProduct(copy);
     };
 
-    const saveProduct = () => {
+    const saveProduct = async () => {
+        const service = new DataService();
+        const savedProduct = await service.postProduct({...product});
+
         /* ... operator is New in other langueges */
         let copy = [...allProducts];
-        copy.push(product);
-        setProducts(copy);
+        copy.push(savedProduct);
+        setAllProducts(copy);
     };
 
     const deleteProduct = (p) => {
         let copy = [...allProducts];
         let index = copy.findIndex((prod) => prod === p );
         copy.splice(index,1);
-        setProducts(copy);
+        setAllProducts(copy);
     }
 
     const handleCouponChange = (e) => {
@@ -55,15 +77,16 @@ function Admin(params) {
     const saveCoupon = () => {
         let copy = [...allCoupons];
         copy.push(coupon);
-        setCoupons(copy);
+        setAllCoupons(copy);
     };
 
     const deleteCoupon = (c) => {
         let copy = [...allCoupons];
         let index = copy.findIndex((prod) => prod === c );
         copy.splice(index,1);
-        setCoupons(copy);
+        setAllCoupons(copy);
     }
+    
     return (
         <div className="admin">
             <h1>Store Administration</h1>
@@ -76,7 +99,7 @@ function Admin(params) {
                     <div className='form'>
                         <div className="mb-3">
                             <label className="form-label">Title</label>
-                            <input onBlur={handleTextChange} type="text" className="form-control" name="title" />
+                            <input onBlur={handleTextChange} type="text" className="form-control" name="name" />
                         </div>
                         <div className="mb-3">
                             <label className="form-label">Price</label>
@@ -88,7 +111,7 @@ function Admin(params) {
                         </div>
                         <div className="mb-3">
                             <label className="form-label">Image</label>
-                            <input onBlur={handleTextChange} type="text" className="form-control" name="image" />
+                            <input onBlur={handleTextChange} type="text" className="form-control" name="img" />
                         </div>
                         <div className="form-buttons">
                             <button className="btn btn-dark" onClick={saveProduct} cli>Save Product</button>
@@ -98,7 +121,7 @@ function Admin(params) {
                     <ul className="product-list">
                         {allProducts.map((p) => (
                         <li>
-                            <span className='title'>{p.title}</span>
+                            <span className='title'>{p.name}</span>
                             <span className='price'>${parseFloat(p.price).toFixed(2)}</span>
                             <span className='price'>{p.category}</span>
                             <button className="btn btn-sm btn-outline-danger" onClick={() => deleteProduct(p)}><i className="fa-solid fa-trash"></i></button>

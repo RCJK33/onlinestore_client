@@ -1,88 +1,28 @@
-let catalog = [
-    {   
-        _id:1,
-        name:"Egg",
-        price: 10.5,
-        img: "egg.jpg",
-        category: "Dairy & egg"
-    },
-    {
-        _id:2,
-        name:"Banana",
-        price: 5.0,
-        img: "banana.jpg",
-        category: "Fruit"
-    },
-    {
-        _id:3,
-        name:"Carrot",
-        price: 27.0,
-        img: "carrot.jpg",
-        category: "Vegetable"
-    },
-    {
-        _id:4,
-        name:"Cucumber",
-        price: 40.6,
-        img: "cucumber.jpg",
-        category: "Fruit"
-    },
-    {
-        _id:5,
-        name:"Green Bell Poper",
-        price: 20.1,
-        img: "green_bell_poper.jpg",
-        category: "Vegetable"
-    },
-    {
-        _id:6,
-        name:"Lettuce",
-        price: 27.0,
-        img: "lettuce.jpg",
-        category: "Vegetable"
-    },
-    {
-        _id:7,
-        name:"Mushroom",
-        price: 27.0,
-        img: "mushroom.jpg",
-        category: "Dairy & egg"
-    },
-    {
-        _id:8,
-        name:"Onion",
-        price: 27.0,
-        img: "onion.jpg",
-        category: "Vegetable"
-    },
-    {
-        _id:9,
-        name:"Potato",
-        price: 27.0,
-        img: "potato.jpg",
-        category: "Vegetable"
-    },
-    {
-        _id:10,
-        name:"Red Bell Poper",
-        price: 27.0,
-        img: "red_bell_poper.jpg",
-        category: "Vegetable"
-    },
-    {
-        _id:11,
-        name:"Tomato",
-        price: 27.0,
-        img: "tomato.jpg",
-        category: "Vegetable"
-    }
-]
+import axios from "axios";
 
 class DataService{
-    getProducts() {
-        return catalog;
-        // TODO: Get catalog from server
+    serverURL = 'http://127.0.0.1:5000';
+
+    async getProducts() {
+        const request = await axios.get(this.serverURL + '/api/products');
+        return request.data;
+    }
+
+    async postProduct(product) {
+        console.log(product);
+        const request = await axios.post(this.serverURL + '/api/products', product);
+        return request.data;
+    }
+    
+    async getCategories() {
+        const request = await axios.get(this.serverURL + '/api/categories');
+        return request.data;
+    }
+    
+    async getCoupons() {
+        const request = await axios.get(this.serverURL + '/api/coupons');
+        return request.data;
     }
 }
 
-export default DataService
+export default DataService;

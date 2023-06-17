@@ -4,11 +4,11 @@ import { useContext, useState } from "react";
 import StoreContext from "../store/storeContext";
 
 function Product(product) {
-    const [quant,setQuantity] = useState(1);
+    const [quantity,setQuantity] = useState(1);
     const addToCart = useContext(StoreContext).addToCart;
 
     function handleAdd(pdn){
-        const prod2Cart = {...product.data, quant};
+        const prod2Cart = {...product.data, quantity};
         addToCart(prod2Cart);
     }
 
@@ -25,7 +25,7 @@ function Product(product) {
             <div className="f-column">
                 <div className="f-row">
                     <label className="lbl-price f-column"><span>Price</span> ${product.data.price.toFixed(2)}</label>
-                    <label className="lbl-total f-column"><span>Total</span> ${(product.data.price*quant).toFixed(2)}</label>
+                    <label className="lbl-total f-column"><span>Total</span> ${(product.data.price*quantity).toFixed(2)}</label>
                 </div>
                 <QuantityPicker onChange={onChangeQP}/>
                 <button className="btn btn-success btn-sm" onClick={() => handleAdd(product.data.name)}>

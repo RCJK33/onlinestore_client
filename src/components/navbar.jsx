@@ -1,15 +1,11 @@
-import { useContext, useEffect } from "react";
+import { useContext} from "react";
 import "./cssStyles/navbar.css"
 import { Link } from 'react-router-dom';
 import StoreContext from "../store/storeContext";
 
 
 function Navbar() {
-    let { cart, user } = useContext(StoreContext);
-
-    const getCartCount = () => {
-        return cart.length;
-    };
+    let {user, getCartCount} = useContext(StoreContext);
 
     return (
         <nav className="navbar navbar-expand-lg bg-secondary-subtle">

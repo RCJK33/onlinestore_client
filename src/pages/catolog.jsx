@@ -1,4 +1,4 @@
-import Product from "./product";
+import Product from "../components/product";
 import "./cssStyles/catalog.css"
 
 import DataService from "../Services/DataService";
@@ -12,15 +12,16 @@ const Catalog = () => {
     const [productsToDisplay,setProductsToDisplay] = useState([]);
 
     useEffect(() => {
-        let service = new DataService();
-        let prods = service.getProducts();
-        setAllProducts(prods);
-        setProductsToDisplay(prods)
         loadCatalog();
     }, []);
 
-    function loadCatalog() {
-        let catalg = ["Vegetable","Fruit","Dairy & egg"];
+    async function loadCatalog() {
+        let service = new DataService();
+        let prods = await service.getProducts();
+        setAllProducts(prods);
+        setProductsToDisplay(prods);
+
+        let catalg = await service.getCategories();
         setCategories(catalg);
     }
 
