@@ -6,8 +6,9 @@ const GlobalState = (props) => {
     const [user,setUser] = useState({id: 122215, name: "Rafael Chavez", email: "rafael.cahvez29@uabc.edu.mx"});
 
     const addToCart = (product) => {
+        console.log(product)
         let copy = [...cart];
-        let index = copy.findIndex((p) => parseFloat(p._id) == parseFloat(product._id));
+        let index = copy.findIndex((p) => p._id == product._id);
         if (index == -1){
             copy.push(product);
         } else {

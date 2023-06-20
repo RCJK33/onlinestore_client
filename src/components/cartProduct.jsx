@@ -10,7 +10,7 @@ function CartProduct(params) {
             <div className="image"><img src={"/images/"+params.data.img} alt="" srcset="" /></div>
             <div className="title">{params.title}</div>
             <div className="quantity"><p>Quantity</p>{params.quantity}</div>
-            <div className="price"><p>Price</p>${params.quantity * params.data.price}</div>
+            <div className="price"><p>Total</p>${parseFloat(params.quantity * params.data.price).toFixed(2)}</div>
             <button className="btn btn-sm btn-outline-danger" onClick={() => removeFromCart(params.data)}><i className="fa-solid fa-trash"></i></button>
         </div>
     );
