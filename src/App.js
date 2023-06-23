@@ -14,7 +14,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import { Routes } from 'react-router-dom';
 import About from './pages/about';
 import Cart from './pages/cart';
-import Admin from './pages/admin';
+import Admin from './pages/admin/admin';
 import GlobalState from './store/globalState';
 
 function App() {

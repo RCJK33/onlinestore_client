@@ -11,7 +11,7 @@ function CartProduct(params) {
             <div className="title">{params.title}</div>
             <div className="quantity"><p>Quantity</p>{params.quantity}</div>
             <div className="price"><p>Total</p>${parseFloat(params.quantity * params.data.price).toFixed(2)}</div>
-            <button className="btn btn-sm btn-outline-danger" onClick={() => removeFromCart(params.data)}><i className="fa-solid fa-trash"></i></button>
+            <button className="btn btn-sm btn-outline-danger" onClick={() => removeFromCart(params.data._id)}><i className="fa-solid fa-trash"></i></button>
         </div>
     );
 }

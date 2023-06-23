@@ -30,7 +30,7 @@
 
     background-color: white;
     border-radius: 10px;
-    border: solid 1px gray;
+    border: rgb(197, 197, 197) 1px solid;
 }
 
 .admin section .form {
@@ -91,4 +91,15 @@
 
 .admin .sections .Admin-Coupons {
     flex: 1;
+}
+
+.admin .Admin-Coupons .invalid {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.admin .Admin-Coupons .invalid .error {
+    display: flex;
+    color: tomato;
 }

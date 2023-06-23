@@ -31,13 +31,13 @@ function Navbar() {
                     </ul>
                     <form className="d-flex" role="search">
                         <Link className='btn btn-outline-success position-relative' to='/cart'>
-                            <i class="i-cart fa-solid fa-cart-shopping"></i>
-                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill text-bg-warning" hidden={getCartCount() == 0}>
+                            <i className="i-cart fa-solid fa-cart-shopping"></i>
+                            <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill text-bg-warning" hidden={getCartCount() === 0}>
                                 {getCartCount()}
                             </span>
                         </Link>
                         <label className="lbl-user">
-                            <i class="i-user fa-solid fa-circle-user"></i>
+                            <i className="i-user fa-solid fa-circle-user"></i>
                             {user.name}
                         </label>
                     </form>

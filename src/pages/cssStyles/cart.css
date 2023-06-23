@@ -2,6 +2,7 @@
     flex-direction: row;
     align-items: center;
 }
+
 .cart{
     background-color: #e7e7e7;
     padding: 30px 50px;
@@ -9,8 +10,6 @@
     margin-bottom: 20px;
 
     border-radius: 10px;
-
-    caret-color: transparent;
 }
 
 .cart .sections {
@@ -24,33 +23,84 @@
 
 .cart .sections .cart-list {
     flex: 4;
+    caret-color: transparent;
 }
 
 .cart .sections .payment {
     flex: 1;
     padding: 10px;
+    height: fit-content;
 
     background-color: white;
     border: solid 1px gray;
     border-radius: 5px;
 }
 
-.cart .sections .payment .coupons input {
-    margin-right: 10px;
+.cart .payment .info .ticket{
+    justify-content: space-between;
+}
+
+.cart .payment .info .br{
+    background-color: rgb(170, 170, 170);
+    height: 1px;
+    margin: 5px 0;
+}
+
+.cart .payment .info .ticket p{
+    margin: 0;
 }
 
 .cart .payment .total {
     margin-bottom: 10px;
-    justify-content: flex-start;
+    
 }
 
-.cart .payment .total p {
-    margin: 0;
-    padding: 0;
-    font-size: 20px;
+.cart .payment .coupons .error {
+    color: tomato;
 }
 
-.cart .payment .total h4 {
-    margin: 0 20px 0 0;
+.cart ul.coupon-list {
+    list-style: none;
+    margin: 10px 0;
     padding: 0;
+}
+
+.cart ul.coupon-list li {
+    display: flex;
+
+
+    margin: 5px 0;
+    padding: 5px;
+
+    border: solid 1px gray;
+    border-radius: 5px;
+
+    align-items: center;
+}
+
+.cart ul.coupon-list li span {
+    display: flex;
+    text-align: left;
+}
+
+.cart ul.coupon-list li .title {
+    flex: 4;
+    margin-left: 10px;
+}
+
+.cart ul.coupon-list li .price {
+    flex: 1;
+}
+
+.cart ul.coupon-list li button {
+    width: auto;
+    margin-left: 10px;
+}
+
+.cart ul.coupon-list li:hover {
+    border: solid 1px rgb(173, 119, 119);
+}
+
+.cart .sections .cart-Coupons {
+    flex: 1;
 }
