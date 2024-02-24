@@ -18,7 +18,7 @@ function Product(product) {
 
     return (
         <div className="product f-column">
-            <img src={"/images/"+product.data.img} alt="" srcset="" />
+            <img src={"/images/"+product.data.img+".jpg"} alt="" srcset="" />
             <div className="product-element f-column">
                 <h5>{product.data.name}</h5>
             </div>

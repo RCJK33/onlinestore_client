@@ -1,7 +1,7 @@
 import axios from "axios";
 
 class DataService{
-    serverURL = 'http://127.0.0.1:5000';
+    serverURL = 'shop.byteaxiom.com';
 
     async getProducts() {
         const request = await axios.get(this.serverURL + '/api/products');

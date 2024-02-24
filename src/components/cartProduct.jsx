@@ -7,7 +7,7 @@ function CartProduct(params) {
 
     return(
         <div className="cart-product">
-            <div className="image"><img src={"/images/"+params.data.img} alt="" srcset="" /></div>
+            <div className="image"><img src={"/images/"+params.data.img+".jpg"} alt="" srcset="" /></div>
             <div className="title">{params.title}</div>
             <div className="quantity"><p>Quantity</p>{params.quantity}</div>
             <div className="price"><p>Total</p>${parseFloat(params.quantity * params.data.price).toFixed(2)}</div>
